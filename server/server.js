@@ -12,11 +12,7 @@ const App = express()
 const _dirname = path.resolve();
 
 App.use(express.json())
-const corsOptions = {
-    origin:"https://imagify-u2mz.onrender.com",
-    Credentials:true
-}
-App.use(cors(corsOptions))
+App.use(cors())
 await connectDB()
 
 App.use('/api/user', userRouter);
